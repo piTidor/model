@@ -25,11 +25,6 @@ public class GroupSettings {
     @Column(nullable = true)
     private Date r_modify_date;
 
-    @Column(nullable = true)
-    private Date timeStart;
-    @Column(nullable = true)
-    private Date timeOff;
-
     private boolean onliVideo;
 
     private boolean linkBlocker;
