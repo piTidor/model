@@ -35,8 +35,8 @@ public class VkGroup {
 
     private int members_count;
 
-    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT true")
-    private  boolean postStories;
+    @Column(nullable = true, columnDefinition = "BOOLEAN DEFAULT true")
+    private Boolean postStories;
 
     private String name;
     @Column(name = "vk_id")

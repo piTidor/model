@@ -28,6 +28,4 @@ public class UsersBot {
     @OneToOne
     private Users users;
 
-    private boolean bub;
-
 }
