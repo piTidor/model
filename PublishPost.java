@@ -25,6 +25,8 @@ public class PublishPost {
     @Column(nullable = true)
     private String idInGroup;
 
+    private String url;
+
     @ManyToOne
     @JoinColumn(name = "posting_group_id")
     private PostingGroup postingGroup;

@@ -23,6 +23,8 @@ public class MainGroupSettings {
 
     private int finish_post_date;
 
+    private  int max_count;
+
     @Column(nullable = true)
     private int period;
 

@@ -19,9 +19,9 @@ public class OpenAiIntegration {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private Date r_creation_date;
+    private String r_creation_date;
 
-    private Date r_modify_date;
+    private String r_modify_date;
 
     @ManyToOne
     @JoinColumn(name = "gpt_keys_id")

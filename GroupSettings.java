@@ -13,17 +13,22 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name ="group_settings")
+@Table(name ="post_settings")
 public class GroupSettings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(nullable = true)
-    private Date r_creation_date;
+    private String r_creation_date;
 
     @Column(nullable = true)
-    private Date r_modify_date;
+    private String r_modify_date;
+
+    @Column(nullable = true, columnDefinition = "BOOLEAN DEFAULT false")
+    private boolean text;
+
+    private int count;
 
     private boolean onliVideo;
 
@@ -34,8 +39,6 @@ public class GroupSettings {
     private boolean VideoIfHasPhoto;
 
     private boolean PhotoIfHasVideo;
-    @Column(nullable = true)
-    private int period;
 
     @Override
     public String toString() {

@@ -23,15 +23,9 @@ public class Users {
     @Column(name = "id")
     private Long id;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<VkGroup> vk_groups;
+    private String r_creation_date;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<LastMessages> messages;
-
-    private Date r_creation_date;
-
-    private Date r_modify_date;
+    private String r_modify_date;
 
     private Long vkId;
 
@@ -41,15 +35,6 @@ public class Users {
 
     private boolean active;
 
-
-    public static Users convertJsonToUsers(String json) {
-        Gson gson = new Gson();
-        return gson.fromJson(json, Users.class); // Преобразование JSON в объект Users
-    }
-    public String convertUsersToJson() {
-        Gson gson = new Gson();
-        return gson.toJson(this); // Преобразование объекта Users в JSON
-    }
 
     public static boolean isEmpty(Users users){
         if (users == null){
