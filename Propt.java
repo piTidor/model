@@ -17,7 +17,21 @@ public class Propt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name;
+    private String proxyIP;
 
-    private String value;
+    private int proxyPort;
+
+    private String proxyUser;
+
+    private String proxyPass;
+
+    private String proxyURL;
+
+    private String testGroupToken;
+
+    private String testUserToken;
+
+    private int day;
+
+    private int hour;
 }
