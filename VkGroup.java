@@ -27,6 +27,9 @@ public class VkGroup {
     @OneToOne()
     private MainGroupSettings mainGroupSettings;
 
+    @Column(nullable = true, columnDefinition = "BOOLEAN DEFAULT false")
+    private boolean status;
+
     private String r_creation_date;
 
     private String r_modify_date;
