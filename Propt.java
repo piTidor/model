@@ -32,6 +32,9 @@ public class Propt {
     private String testUserToken;
 
     private int day;
+    @Column(nullable = true)
+    @Builder.Default
+    private int clip_hour = 12;
 
     private int hour;
 }

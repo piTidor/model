@@ -22,6 +22,12 @@ public class MainGroupSettings {
     private int start_post_date;
 
     private int finish_post_date;
+    @Column(nullable = true)
+    @Builder.Default
+    private int start_clip = 10;
+    @Column(nullable = true)
+    @Builder.Default
+    private int finish_clip = 22;
 
     private  int max_count;
 
