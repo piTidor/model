@@ -19,6 +19,12 @@ public class PublishPost {
 
     private Integer identity;
 
+    @Column(name = "oldText", length = 1000)
+    private String oldText;
+
+    @Column(name = "newText", length = 1000)
+    private String newText;
+
     @Column(nullable = true)
     private String date;
 
@@ -30,4 +36,19 @@ public class PublishPost {
     @ManyToOne
     @JoinColumn(name = "posting_group_id")
     private PostingGroup postingGroup;
+
+    public void setNewText(String newText) {
+        if (newText != null && newText.length() > 1000) {
+            this.newText = newText.substring(0, 1000); // Обрезаем до 1000 символов
+        } else {
+            this.newText = newText;
+        }
+    }
+    public void setOldText(String oldText) {
+        if (oldText != null && oldText.length() > 1000) {
+            this.oldText = oldText.substring(0, 1000); // Обрезаем до 1000 символов
+        } else {
+            this.oldText = oldText;
+        }
+    }
 }
