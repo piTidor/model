@@ -1,4 +1,4 @@
-package org.example.model;
+package com.vkserver.callbeckserver.model;
 
 import com.google.gson.Gson;
 import jakarta.persistence.*;
