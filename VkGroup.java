@@ -1,4 +1,6 @@
-package com.vkserver.callbeckserver.model;
+
+package com.example.collectorvk.model;
+
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+
 
 @Data
 @Entity
@@ -44,6 +46,9 @@ public class VkGroup {
     private String name;
     @Column(name = "vk_id")
     private Integer vkId;
+
+    @Column(nullable = true)
+    private String code;
 
     private String token;
 

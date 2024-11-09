@@ -1,4 +1,5 @@
-package com.vkserver.callbeckserver.model;
+package com.example.collectorvk.model;
+
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;

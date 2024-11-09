@@ -1,6 +1,6 @@
-package com.vkserver.callbeckserver.model;
 
-import com.google.gson.Gson;
+package com.example.collectorvk.model;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Date;
 
 @Data
 @Entity

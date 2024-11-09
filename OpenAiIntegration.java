@@ -1,4 +1,5 @@
-package com.vkserver.callbeckserver.model;
+package com.example.collectorvk.model;
+
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

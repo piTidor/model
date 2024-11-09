@@ -1,6 +1,5 @@
 package com.example.collectorvk.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,12 +11,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name ="gpt_keys")
-public class GPTKeys {
+@Table(name = "deputy_users")
+public class DeputyUsers {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    private String api;
+    private String vkId;
 
+    private String active;
+
+    private String values;
+
+    @ManyToOne
+    @JoinColumn(name = "vk_group_id")
+    private VkGroup vkGroup;
 }
