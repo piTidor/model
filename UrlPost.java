@@ -1,4 +1,4 @@
-package com.example.collectorvk.model;
+package com.example.downloader.model;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,6 +18,10 @@ public class UrlPost {
     long vkGroupId;
 
     long postingId;
+
+    long postId;
+
+    long userId;
 
     String text;
 
