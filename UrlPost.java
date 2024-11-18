@@ -19,6 +19,10 @@ public class UrlPost {
 
     long postingId;
 
+    long postId;
+
+    long userId;
+
     String text;
 
     List<String> attachment;
