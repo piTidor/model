@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Data
@@ -19,12 +21,6 @@ public class GroupSettings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @Column(nullable = true)
-    private String r_creation_date;
-
-    @Column(nullable = true)
-    private String r_modify_date;
 
     @Column(nullable = true, columnDefinition = "BOOLEAN DEFAULT false")
     private boolean text;
@@ -40,6 +36,25 @@ public class GroupSettings {
     private boolean VideoIfHasPhoto;
 
     private boolean PhotoIfHasVideo;
+
+    @Column(nullable = true)
+    private String r_creation_date;
+
+    @Column(nullable = true)
+    private String r_modify_date;
+
+    @PrePersist
+    public void onCreate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String now = LocalDateTime.now().format(formatter);
+        this.r_creation_date = now;
+        this.r_modify_date = now;
+    }
+    @PreUpdate
+    public void onUpdate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.r_modify_date = LocalDateTime.now().format(formatter);
+    }
 
     @Override
     public String toString() {

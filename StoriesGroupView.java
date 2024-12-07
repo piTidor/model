@@ -1,4 +1,3 @@
-
 package com.example.collectorvk.model;
 
 import jakarta.persistence.*;
@@ -6,36 +5,37 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name ="users")
-public class Users {
-
+@Table(name ="stories_group_view")
+public class StoriesGroupView {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    private long id;
+
+    private int vkId;
+
+    private boolean active;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private VkGroup vkGroup;
+
+    private boolean photo;
+
+    private boolean video;
+
+    private boolean text;
 
     private String r_creation_date;
 
     private String r_modify_date;
-
-    private Long vkId;
-
-    private String token;
-
-    private String name;
-
-    private boolean active;
 
     @PrePersist
     public void onCreate() {
@@ -48,14 +48,6 @@ public class Users {
     public void onUpdate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.r_modify_date = LocalDateTime.now().format(formatter);
-    }
-
-
-    public static boolean isEmpty(Users users){
-        if (users == null){
-            return true;
-        }
-        return StringUtils.isEmpty(users.getName());
     }
 
 }
