@@ -1,5 +1,5 @@
 
-package com.example.collectorvk.model;
+package com.example.downloader.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
