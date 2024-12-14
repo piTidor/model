@@ -27,6 +27,9 @@ public class PublishPost {
     @Column(name = "newText", length = 1000)
     private String newText;
 
+    @Column(nullable = true)
+    private String status;
+
     private String r_creation_date;
 
     private String r_modify_date;
