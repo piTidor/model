@@ -1,4 +1,4 @@
-package com.example.downloader.model;
+package com.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
