@@ -29,8 +29,8 @@ public class Users {
 
     private String r_modify_date;
 
-    @Column(nullable = true)
-    private String telegram_name;
+    @Column(nullable = true, name = "telegram_name")
+    private String telegramName;
 
     private Long vkId;
 
