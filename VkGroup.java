@@ -31,8 +31,8 @@ public class VkGroup {
     @OneToOne()
     private MainGroupSettings mainGroupSettings;
 
-    @Column(nullable = true, columnDefinition = "BOOLEAN DEFAULT false")
-    private boolean posting_stories;
+    @Column(nullable = true, columnDefinition = "BOOLEAN DEFAULT false", name = "posting_stories")
+    private boolean postingStories;
 
     private int lastTimePost;
 
