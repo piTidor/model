@@ -27,12 +27,11 @@ public class VkGroup {
     @JoinColumn(name = "user_id")
     private Users user;
 
-
     @OneToOne()
     private MainGroupSettings mainGroupSettings;
 
-    @Column(nullable = true, columnDefinition = "BOOLEAN DEFAULT false")
-    private boolean posting_stories;
+    @Column(nullable = true, name = "group_name")
+    private String groupName;
 
     private int lastTimePost;
 
@@ -42,6 +41,7 @@ public class VkGroup {
     private Boolean postStories;
 
     private String name;
+
     @Column(name = "vk_id")
     private Integer vkId;
 
