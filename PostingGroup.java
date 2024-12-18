@@ -26,12 +26,6 @@ public class PostingGroup {
     @Column(nullable = true)
     private String name;
 
-    @Column(nullable = true, name = "nop_on_day")
-    private int topOnDay;
-
-    @Column(nullable = true, name = "hour_post")
-    private int hourPost;
-
     @OneToOne(cascade = CascadeType.ALL)
     private GroupSettings groupSettings;
 
