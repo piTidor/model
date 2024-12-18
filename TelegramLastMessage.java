@@ -29,6 +29,8 @@ public class TelegramLastMessage {
 
     private String r_modify_date;
 
+    private String mediaGroupId;
+
     @PrePersist
     public void onCreate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
