@@ -32,9 +32,16 @@ public class PostingGroup {
     @OneToOne(cascade = CascadeType.ALL)
     private OpenAiIntegration openAiIntegration;
 
+    @Column(name = "last_post_date")
+    private int lastPostDate;
+
     @ManyToOne
     @JoinColumn(name = "group_id")
     private VkGroup vkGroup;
+
+    @ManyToOne
+    @JoinColumn(name = "posting_cluster", nullable = true)
+    private PostingСluster postingСluster;
 
     @Column(nullable = true,columnDefinition = "BOOLEAN DEFAULT false")
     private boolean hasPined;

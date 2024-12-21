@@ -58,6 +58,10 @@ public class VkGroup {
     @Column(nullable = true)
     private String r_modify_date;
 
+    @ManyToOne
+    @JoinColumn(name = "timer_post", nullable = true)
+    private TimerPost timerPost;
+
     @PrePersist
     public void onCreate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
