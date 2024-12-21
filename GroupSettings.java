@@ -37,6 +37,15 @@ public class GroupSettings {
 
     private boolean PhotoIfHasVideo;
 
+    @Column(name = "nop_on_day",columnDefinition = "int DEFAULT 0")
+    private int topOnDay;
+
+    @Column(columnDefinition = "int DEFAULT 0", name = "hour_post")
+    private int hourPost;
+
+    @Column(columnDefinition = "BOOLEAN DEFAULT false", name = "today_posted")
+    private boolean todayPosted;
+
     @Column(nullable = true)
     private String r_creation_date;
 

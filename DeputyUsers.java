@@ -20,9 +20,17 @@ public class DeputyUsers {
 
     private String vkId;
 
+    @Column(nullable = true, name = "telegram_name")
+    private String telegramName;
+
     private String active;
 
     private String values;
+
+    @ManyToOne
+    @JoinColumn(name = "vk_user_id")
+    private Users user;
+
 
     @ManyToOne
     @JoinColumn(name = "vk_group_id")
