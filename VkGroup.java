@@ -64,6 +64,11 @@ public class VkGroup {
 
     @PrePersist
     public void onCreate() {
+        if (this.timerPost == null) {
+            TimerPost defaultTimerPost = new TimerPost();
+            defaultTimerPost.setId(1L); // Устанавливаем id как 1
+            this.timerPost = defaultTimerPost;
+        }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String now = LocalDateTime.now().format(formatter);
         this.r_creation_date = now;
