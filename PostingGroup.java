@@ -40,8 +40,8 @@ public class PostingGroup {
     private VkGroup vkGroup;
 
     @ManyToOne
-    @JoinColumn(name = "posting_cluster", nullable = true)
-    private PostingСluster postingСluster;
+    @JoinColumn(name = "timer_post", nullable = true)
+    private TimerPost timerPost;
 
     @Column(nullable = true,columnDefinition = "BOOLEAN DEFAULT false")
     private boolean hasPined;
