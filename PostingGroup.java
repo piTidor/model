@@ -32,8 +32,6 @@ public class PostingGroup {
     @OneToOne(cascade = CascadeType.ALL)
     private OpenAiIntegration openAiIntegration;
 
-    @Column(name = "last_post_date")
-    private int lastTimePost;
 
     @ManyToOne
     @JoinColumn(name = "group_id")

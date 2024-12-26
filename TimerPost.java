@@ -30,6 +30,9 @@ public class TimerPost {
     @Column(name = "finish_post_date", nullable = true)
     private int finishPostDate;
 
+    @Column(name = "last_post_date")
+    private int lastTimePost;
+
     @Column(name = "schedule", nullable = true)
     private String schedule;
 }
