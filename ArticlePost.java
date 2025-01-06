@@ -1,6 +1,5 @@
 package com.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,18 +14,22 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name ="vk_settings")
-public class MainGroupSettings {
+@Table(name ="article_post")
+public class ArticlePost {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(columnDefinition = "TEXT")
+    public String title;
+    public String attachment;
+    public String link;
+    @Column(columnDefinition = "TEXT")
+    public String description;
+    public String owner;
 
-    private boolean isTextRefresh;
-
-    @Column(name = "article_post")
-    private boolean articlePost;
-
-    private  int max_count;
+    @ManyToOne
+    @JoinColumn(name = "article_id")
+    ArticleContentViewer articleContentViewer;
 
     @Column(nullable = true)
     private String r_creation_date;
@@ -46,6 +49,5 @@ public class MainGroupSettings {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.r_modify_date = LocalDateTime.now().format(formatter);
     }
-
 
 }

@@ -38,6 +38,9 @@ public class Users {
 
     private String name;
 
+    @Column(columnDefinition = "TEXT")
+    private String cookies;
+
     private boolean active;
 
     @PrePersist
