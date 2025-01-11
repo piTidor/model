@@ -24,7 +24,11 @@ public class ArticleContentViewer {
 
     private String url;
 
-    private int hour;
+    @Column(columnDefinition = "int DEFAULT 0", name = "hour_post")
+    private int hourPost;
+
+    @Column(columnDefinition = "BOOLEAN DEFAULT false", name = "today_posted")
+    private boolean todayPosted;
 
     @Column(name = "article_type")
     @Enumerated(EnumType.STRING)
