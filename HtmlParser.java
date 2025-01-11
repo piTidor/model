@@ -19,5 +19,8 @@ public class HtmlParser {
 
     private String first;
 
+    @Column(name = "bad-attach")
+    private String badAttach;
+
     private String teg;
 }
